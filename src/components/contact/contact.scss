@@ -47,6 +47,13 @@
         font-weight: 400;
         font-size: 20px;
         cursor: pointer;
+
+
+        &:hover {
+          background-color: transparent;
+          border: 1px solid white;
+          color: rgb(247, 243, 243);
+        }
       }
     }
   }

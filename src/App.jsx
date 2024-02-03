@@ -6,7 +6,7 @@ import Parallax from './components/parallax/Parallax';
 import Contact from './components/contact/Contact';
 
 const App = () => {
-  const type = "Technical Skills"; // or provide the correct value for type
+  const type = "Technical Skills"; 
 
   return (
     <div>
