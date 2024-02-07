@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import "./contact.scss";
 import { motion, useInView } from "framer-motion";
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 
 const variants = {
     initial: {
@@ -24,28 +24,27 @@ const Contact = () => {
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
 
-    const isInView = useInView(ref, { margin: "-100px" });
+    const isInView = useInView(formRef, { margin: "-100px" });
 
     const sendEmail = (e) => {
         e.preventDefault();
-
-        // emailjs
-        //     .sendForm(
-        //         "service_94y20xo",
-        //         "template_v10u2oh",
-        //         formRef.current,
-        //         "pX_2hasGmGcuvjXIW"
-        //     )
-        //     .then(
-        //         (result) => {
-        //             setSuccess(true)
-        //         },
-        //         (error) => {
-        //             setError(true);
-        //         }
-        //     );
-
-        // We can write our own funtionality to send emails...
+    
+        emailjs
+          .sendForm('service_qjpigh9', 'template_2sel3ub', formRef.current, {
+            publicKey: '7kfT5aGstA9WF96Z0',
+          })
+          .then(
+            () => {
+              console.log('SUCCESS!');
+              setSuccess(true);
+              setError(false);
+            },
+            (error) => {
+              console.log('FAILED...', error.text);
+              setError(true);
+              setSuccess(false);
+            },
+          );
     };
 
     return (
@@ -105,7 +104,7 @@ const Contact = () => {
                     ref={formRef}
                     onSubmit={sendEmail}
                     initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    animate={isInView ? "animate" : "initial"}
                     transition={{ delay: 4, duration: 1 }}
                 >
                     <input type="text" required placeholder="Name" name="name" />
@@ -121,4 +120,6 @@ const Contact = () => {
 };
 
 
-export default Contact;
+
+
+export default Contact
