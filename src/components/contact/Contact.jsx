@@ -38,6 +38,8 @@ const Contact = () => {
               console.log('SUCCESS!');
               setSuccess(true); // Set success state to true
               setError(false); // Reset error state
+              // Clear form fields
+              formRef.current.reset();
             },
             (error) => {
               console.log('FAILED...', error.text);
