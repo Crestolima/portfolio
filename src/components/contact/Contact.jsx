@@ -24,7 +24,7 @@ const Contact = () => {
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
 
-    const isInView = useInView(formRef, { margin: "-100px" });
+    const isInView = useInView(ref, { margin: "-100px" });
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -36,17 +36,16 @@ const Contact = () => {
           .then(
             () => {
               console.log('SUCCESS!');
-              setSuccess(true);
-              setError(false);
+              setSuccess(true); // Set success state to true
+              setError(false); // Reset error state
             },
             (error) => {
               console.log('FAILED...', error.text);
-              setError(true);
-              setSuccess(false);
+              setError(true); // Set error state to true
+              setSuccess(false); // Reset success state
             },
           );
     };
-
     return (
         <motion.div
             ref={ref}
@@ -63,7 +62,7 @@ const Contact = () => {
                 </motion.div>
                 <motion.div className="item" variants={variants}>
                     <h2>Address</h2>
-                    <span>Bengaluru,Karnataka</span>
+                    <span>Banglore</span>
                 </motion.div>
                 <motion.div className="item" variants={variants}>
                     <h2>Phone</h2>
@@ -104,7 +103,7 @@ const Contact = () => {
                     ref={formRef}
                     onSubmit={sendEmail}
                     initial={{ opacity: 0 }}
-                    animate={isInView ? "animate" : "initial"}
+                    whileInView={{ opacity: 1 }}
                     transition={{ delay: 4, duration: 1 }}
                 >
                     <input type="text" required placeholder="Name" name="name" />
@@ -119,7 +118,4 @@ const Contact = () => {
     );
 };
 
-
-
-
-export default Contact
+export default Contact;

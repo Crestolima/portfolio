@@ -1,6 +1,5 @@
-import React from 'react'
-import { useRef } from 'react';
-import './Projectstyles.scss'
+import React, { useRef } from 'react';
+import './Projectstyles.scss';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 
 const items = [
@@ -22,7 +21,6 @@ const items = [
     img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
     desc: "Developed an advanced Online Auction System using ReactJS, ExpressJS, Node.js, and MongoDB, fostering seamless buying and selling in a secure online environment. Spearheaded the integration of user authentication and payment gateways, ensuring a smooth and secure transactional experience.",
   },
-
 ];
 
 const Single = ({ item }) => {
@@ -35,7 +33,7 @@ const Single = ({ item }) => {
   const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 
   return (
-    <section >
+    <section>
       <div className="container">
         <div className="wrapper">
           <div className="imageContainer" ref={ref}>
@@ -51,8 +49,9 @@ const Single = ({ item }) => {
     </section>
   );
 };
+
 function Projects() {
-    const ref = useRef();
+  const ref = useRef();
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -63,8 +62,9 @@ function Projects() {
     stiffness: 100,
     damping: 30,
   });
+
   return (
-    <div className="Project" ref={ref}>
+    <div className="Project" ref={ref} style={{ position: 'relative' }}>
       <div className="progress">
         <h1>Projects</h1>
         <motion.div style={{ scaleX }} className="progressBar"></motion.div>
@@ -73,7 +73,7 @@ function Projects() {
         <Single item={item} key={item.id} />
       ))}
     </div>
-  )
+  );
 }
 
-export default Projects 
+export default Projects;

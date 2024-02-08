@@ -5,6 +5,7 @@ import Navbar from './components/navbar/navbar';
 import Parallax from './components/parallax/Parallax';
 import Contact from './components/contact/Contact';
 import Projects from './components/projects/Projects';
+import TechnicalSkills from './components/Technical Skills/TechnicalSkills';
 
 const App = () => {
   const type = "Technical Skills"; 
@@ -19,9 +20,14 @@ const App = () => {
         {/* Pass the type prop with a value */}
         <Parallax type={type} />
       </section>
-      <section id ="Techical Skills">Technical Skills</section>
+      <section id ="Techical Skills"><TechnicalSkills/> </section>
       <section id ="Parallax"><Parallax type={0} /></section>
-      <section id = "Projects"><Projects/></section>
+      <section id = "Projects">
+      
+      {/*<Projects/>*/}
+      
+      
+      </section>
       
       <section id= "Education">Education</section>
       <section id= "Internship">Internship</section>
