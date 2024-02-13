@@ -35,7 +35,7 @@ export default function TechnicalSkills() {
             <motion.div className="listContainer" variants={variants}>
                 {/* Duplicate these divs to make 8 boxes */}
                 <motion.div className="box" whileHover={{ background: "white", color: "black" }}>
-                    <h2>Branding 1</h2>
+                    <h2>Frontend Development</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
                         libero enim nisi aliquam consectetur expedita magni eius ex corrupti
                         animi! Ad nam pariatur assumenda quae mollitia libero repellat
@@ -44,7 +44,7 @@ export default function TechnicalSkills() {
                     <button>Go</button>
                 </motion.div>
                 <motion.div className="box" whileHover={{ background: "white", color: "black" }}>
-                    <h2>Branding 2</h2>
+                    <h2>Frameworks/Libraries</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
                         libero enim nisi aliquam consectetur expedita magni eius ex corrupti
                         animi! Ad nam pariatur assumenda quae mollitia libero repellat
@@ -53,7 +53,7 @@ export default function TechnicalSkills() {
                     <button>Go</button>
                 </motion.div>
                 <motion.div className="box" whileHover={{ background: "white", color: "black" }}>
-                    <h2>Branding 3</h2>
+                    <h2>Database</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
                         libero enim nisi aliquam consectetur expedita magni eius ex corrupti
                         animi! Ad nam pariatur assumenda quae mollitia libero repellat
@@ -62,7 +62,7 @@ export default function TechnicalSkills() {
                     <button>Go</button>
                 </motion.div>
                 <motion.div className="box" whileHover={{ background: "white", color: "black" }}>
-                    <h2>Branding 4</h2>
+                    <h2>Version Control</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
                         libero enim nisi aliquam consectetur expedita magni eius ex corrupti
                         animi! Ad nam pariatur assumenda quae mollitia libero repellat
@@ -71,7 +71,7 @@ export default function TechnicalSkills() {
                     <button>Go</button>
                 </motion.div>
                 <motion.div className="box" whileHover={{ background: "white", color: "black" }}>
-                    <h2>Branding 5</h2>
+                    <h2>Programming</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
                         libero enim nisi aliquam consectetur expedita magni eius ex corrupti
                         animi! Ad nam pariatur assumenda quae mollitia libero repellat
@@ -79,33 +79,7 @@ export default function TechnicalSkills() {
                     </p>
                     <button>Go</button>
                 </motion.div>
-                <motion.div className="box" whileHover={{ background: "white", color: "black" }}>
-                    <h2>Branding 6</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                        libero enim nisi aliquam consectetur expedita magni eius ex corrupti
-                        animi! Ad nam pariatur assumenda quae mollitia libero repellat
-                        explicabo maiores?
-                    </p>
-                    <button>Go</button>
-                </motion.div>
-                <motion.div className="box" whileHover={{ background: "white", color: "black" }}>
-                    <h2>Branding 7</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                        libero enim nisi aliquam consectetur expedita magni eius ex corrupti
-                        animi! Ad nam pariatur assumenda quae mollitia libero repellat
-                        explicabo maiores?
-                    </p>
-                    <button>Go</button>
-                </motion.div>
-                <motion.div className="box" whileHover={{ background: "white", color: "black" }}>
-                    <h2>Branding 8</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                        libero enim nisi aliquam consectetur expedita magni eius ex corrupti
-                        animi! Ad nam pariatur assumenda quae mollitia libero repellat
-                        explicabo maiores?
-                    </p>
-                    <button>Go</button>
-                </motion.div>
+                
             </motion.div>
         </motion.div>
     )
