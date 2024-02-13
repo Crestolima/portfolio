@@ -1,40 +1,34 @@
-import React from 'react';
-import './app.scss';
-import Hero from './components/hero/Hero';
-import Navbar from './components/navbar/navbar';
-import Parallax from './components/parallax/Parallax';
-import Contact from './components/contact/Contact';
-import Projects from './components/projects/Projects';
-import TechnicalSkills from './components/Technical Skills/TechnicalSkills';
+
+import "./app.scss";
+import Hero from "./components/hero/Hero";
+
+import Parallax from "./components/parallax/Parallax";
+import Navbar from "./components/navbar/navbar";
+import Contact from "./components/contact/Contact";
+import TechnicalSkills from "./components/Technical Skills/TechnicalSkills";
+import Projects from "./components/projects/Projects";
 
 const App = () => {
-  const type = "Technical Skills"; 
-
-  return (
-    <div>
-      <section id="About">
-        <Navbar />
-        <Hero />
-      </section>
-      <section id="Parallax">
-        {/* Pass the type prop with a value */}
-        <Parallax type={type} />
-      </section>
-      <section id ="Techical Skills"><TechnicalSkills/> </section>
-      <section id ="Parallax"><Parallax type={0} /></section>
-      <section id = "Projects">
-      
-      {/*<Projects/>*/}
-      
-      
-      </section>
-      
-      <section id= "Education">Education</section>
-      <section id= "Internship">Internship</section>
-
-      <section id="Contact"><Contact/></section>
-    </div>
-  );
+  
+  return <div>
+    
+    <section id="About">
+      <Navbar/>
+      <Hero/>
+    </section>
+    <section ><Parallax type={TechnicalSkills}/>   </section>
+    <section id="Technical Skills"> <TechnicalSkills/></section>
+    <section ><Parallax type="Projects" /></section>
+    <section id="Projects"> {/*<Projects/>*/}
+    <section></section>
+    <section></section>
+    <section></section>
+    </section>
+    
+    <section id="Contact">
+      <Contact/>
+    </section>
+  </div>;
 };
 
 export default App;
