@@ -1,0 +1,194 @@
+.education-container {
+  padding: 40px 20px;
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+  min-height: 100vh;
+  color: white;
+
+  .education-header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #ffd700, #ffa500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-line {
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(to right, #ffd700, #ffa500);
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+  }
+
+  .timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, #ffd700, #ffa500);
+      opacity: 0.3;
+    }
+
+    .timeline-item {
+      margin-bottom: 100px;
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-icon {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #ffd700, #ffa500);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+
+        svg {
+          width: 30px;
+          height: 30px;
+          color: #0c0c1d;
+        }
+      }
+
+      .timeline-content {
+        width: calc(50% - 50px);
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 215, 0, 0.1);
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          width: 20px;
+          height: 2px;
+          background: rgba(255, 215, 0, 0.3);
+        }
+
+        .timeline-period {
+          position: absolute;
+          top: -30px;
+          font-size: 0.9rem;
+          color: #ffd700;
+          font-weight: 500;
+        }
+
+        h3 {
+          font-size: 1.4rem;
+          margin-bottom: 10px;
+          color: #ffd700;
+        }
+
+        h4 {
+          font-size: 1rem;
+          color: #ffa500;
+          margin-bottom: 15px;
+        }
+
+        p {
+          color: rgba(255, 255, 255, 0.8);
+          margin-bottom: 15px;
+          font-size: 0.95rem;
+        }
+
+        .grade {
+          display: inline-block;
+          padding: 5px 12px;
+          background: rgba(255, 215, 0, 0.1);
+          border-radius: 20px;
+          font-size: 0.9rem;
+          color: #ffd700;
+          border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+      }
+
+      &:nth-child(odd) {
+        .timeline-content {
+          margin-right: 50%;
+          text-align: right;
+
+          &::before {
+            right: -20px;
+          }
+
+          .timeline-period {
+            right: 0;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        .timeline-content {
+          margin-left: 50%;
+          text-align: left;
+
+          &::before {
+            left: -20px;
+          }
+
+          .timeline-period {
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .timeline {
+      &::before {
+        left: 30px;
+      }
+
+      .timeline-item {
+        .timeline-icon {
+          left: 30px;
+          transform: translateX(-50%);
+        }
+
+        .timeline-content {
+          width: calc(100% - 80px);
+          margin-left: 80px !important;
+          text-align: left !important;
+
+          &::before {
+            left: -20px !important;
+            right: auto !important;
+          }
+
+          .timeline-period {
+            left: 0 !important;
+            right: auto !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+// Reset and base styles
+*, 
+*::before, 
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-bg: #0c0c1d;
+  --primary-text: #e5e5e5;
+  --accent-color: #8352cc;
+  --section-padding: clamp(40px, 5vw, 80px);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--accent-color);
+  }
+}
+
+.app {
+  position: relative;
+  
+  .sections-container {
+    position: relative;
+    
+    .section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      scroll-snap-align: start;
+      padding: var(--section-padding);
+      position: relative;
+      overflow: hidden;
+
+      // Add subtle gradient overlay to each section
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at center,
+          rgba(131, 82, 204, 0.05) 0%,
+          rgba(12, 12, 29, 0) 70%
+        );
+        pointer-events: none;
+      }
+
+      &#About {
+        padding: 0; // Remove padding for hero section
+      }
+
+      &#Projects {
+        .portfolio {
+          padding-top: var(--section-padding);
+          width: 100%;
+          max-width: 1366px;
+          margin: 0 auto;
+        }
+      }
+
+      // Add section-specific styling
+      &#TechnicalSkills,
+      &#Education,
+      &#Contact {
+        > * {
+          width: 100%;
+          max-width: 1366px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+// Media queries for responsive design
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: none; // Disable snap on mobile for better UX
+  }
+
+  .app .sections-container .section {
+    padding: calc(var(--section-padding) / 2);
+  }
+}
+
+// Smooth scrolling for Safari
+@supports (-webkit-touch-callout: none) {
+  html {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 5px;
+  
+  &:hover {
+    background: lighten(#8352cc, 10%);
+  }
+}
+
+// Remove blue highlight on mobile tap
+@media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
