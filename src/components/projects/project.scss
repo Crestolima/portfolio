@@ -1,23 +1,32 @@
+// project.scss
 .portfolio-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 24px;
+  color: #0f1011;
 
   .portfolio-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+      margin-bottom: 48px;
+    }
   }
 
   .portfolio-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 16px;
+    
 
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
     }
 
     @media (min-width: 1024px) {
@@ -28,18 +37,20 @@
 
 .project-card-wrapper {
   width: 100%;
+  
 
   .project-card {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     cursor: pointer;
     height: 100%;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 
       .image-container img {
         transform: scale(1.1);
@@ -65,6 +76,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
 
         .action-buttons {
           display: flex;
@@ -72,8 +85,8 @@
 
           .action-button {
             background-color: white;
-            color: #3b82f6;
-            padding: 8px;
+            color: #007acc;
+            padding: 10px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -119,10 +132,10 @@
         gap: 8px;
 
         .tag {
-          background-color: #ebf5ff;
-          color: #3b82f6;
-          padding: 4px 8px;
-          border-radius: 16px;
+          background-color: #e0f3ff;
+          color: #007acc;
+          padding: 6px 10px;
+          border-radius: 14px;
           font-size: 0.75rem;
         }
       }

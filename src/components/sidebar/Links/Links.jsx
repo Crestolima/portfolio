@@ -29,7 +29,7 @@ export default function Links() {
 
   const sidebarItems = [
     "About",
-    "Technical Skills",
+    "TechnicalSkills",
     "Projects",
     "Education",
     "Contact"

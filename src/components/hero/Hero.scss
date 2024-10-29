@@ -1,6 +1,7 @@
 .hero {
   // Change from calc(100vh - 100px) to just 100vh and add padding-top
   height: 100vh;
+  width: 250vh;
   padding-top: 100px; // This accounts for the navbar height
   background: linear-gradient(180deg, #0c0c1d, #111132);
   position: relative;
