@@ -25,18 +25,18 @@ export default function Navbar() {
             <img src="/facebook.png" alt="Facebook" />
           </motion.a>
           <motion.a 
-            href="#" 
+            href="https://linkedin.com/in/cresto-lima" 
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <img src="/instagram.png" alt="Instagram" />
+            <img src="/linkedin.png" alt="linkedin" />
           </motion.a>
           <motion.a 
-            href="#" 
+            href="https://github.com/Crestolima" 
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <img src="/youtube.png" alt="YouTube" />
+            <img src="/github.png" alt="Github" />
           </motion.a>
           <motion.a 
             href="#" 

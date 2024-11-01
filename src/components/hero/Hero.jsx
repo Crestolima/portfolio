@@ -3,6 +3,14 @@ import './Hero.scss';
 import { motion } from 'framer-motion';
 
 export default function Hero() {
+  // Function to handle scrolling to a specific section
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="hero">
       <div className="wrapper">
@@ -32,8 +40,12 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <button>See the latest work</button>
-            <button>Contact Me</button>
+            <button onClick={() => scrollToSection('Projects')}>
+              See the latest work
+            </button>
+            <button onClick={() => scrollToSection('Contact')}>
+              Contact Me
+            </button>
           </motion.div>
         </motion.div>
         <motion.div 
